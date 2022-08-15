@@ -9,15 +9,21 @@ using json = nlohmann::json;
 
 int main()
 {
-    std::map<std::string, std::string> details{};
     std::string username, password;
-    std::cout << "Enter Your Username Please: ";
+    std::cout << "Enter Your Username: ";
     std::getline(std::cin, username);
-    std::cout << "Enter Your Password " << username << ": ";
+    std::cout << "Enter Your Password: ";
     std::getline(std::cin, password);
 
-    details["username"] = username; details["password"] = password;
-    std::cout << details["password"] << std::endl;
+    std::map<std::string, std::string> details{
+        {"username", username},
+        {"password", password}
+    };
+
+    json detailsToSend(details);
+
+    std::cout << detailsToSend << std::endl;
+
     return 0;
 }
 
