@@ -15,6 +15,9 @@ int main()
     std::getline(std::cin, username);
     std::cout << "Enter Your Password " << username << ": ";
     std::getline(std::cin, password);
+
+    details["username"] = username; details["password"] = password;
+    std::cout << details["password"] << std::endl;
     return 0;
 }
 
